@@ -7,11 +7,10 @@
     "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5000",
     "start": "node index.js"
   },
-  "engines":{
+  "engines": {
     "node": "12.14.0",
     "npm": "6.13.4"
   },
-
   "dependencies": {
     "core-js": "^3.6.5",
     "react": "^16.13.1",
