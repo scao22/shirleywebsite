@@ -5,8 +5,11 @@
   "main": "",
   "scripts": {
     "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5000",
-    "start": "nodemon",
-    "build": "webpack"
+    "start": "node index.js"
+  },
+  "engines":{
+    "node": "12.14.0",
+    "npm": "6.13.4"
   },
 
   "dependencies": {
