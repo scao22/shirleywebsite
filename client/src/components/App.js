@@ -162,15 +162,22 @@ class App extends Component {
             about me
           </h3>
         <div className="about-container" id="about-page">
-          
+          <div className="about-body">
           {this.state.showPopup1 ?
-            <div className="about-body">
               <div className="about-overlay" onClick={(e) => this.togglePopup1(e)} >
-                <h2 className="about-overlay-text">hi! nice to meet you</h2>
+                <h2 className="about-overlay-container">
+                  <h2 className="about-overlay-text">
+                  Hi! Nice to meet you!
+                  </h2>
+                  <h2 className="about-overlay-text">
+                  Here's a little bit about me :) In my free time, you'll catch me practicing calligraphy, reading, or 
+                  writing in my journal. Occassionally, I'll dable in some baking and guitar playing. I also love traveling 
+                  and photography! But perhaps my favorite and most relaxing passtime is cleaning and decorating my room.
+                  </h2>
+                </h2>
               </div>
-            </div>
             :
-            <div className="about-body">
+            <div>
               <div className="about-image-container"><img src={winnie} className="about-image" ref="winnie" onClick={(e) => this.togglePopup1(e)}></img></div>
               <div ref="winnieText">
                 <h2 className="about-text"> Shirley Cao </h2>
@@ -180,12 +187,21 @@ class App extends Component {
               </div>
             </div>
             }
+
+          </div>
         
           <div className="about-body">
           {this.state.showPopup2 ?
               <div className="about-overlay" onClick={(e) => this.togglePopup2(e)} >
+                <h2 className="about-overlay-container">
                 <h2 className="about-overlay-text">I'm a Junior at MIT studying Computer Science
-                and Engineering and concentrating in Linguistics</h2>
+                and Engineering and concentrating in Linguistics.</h2>
+                <h2 className="about-overlay-text">What I've learned from the most is not any class, but rather through
+                trials that have planted firm beliefs: my failures are worth more than my successes, things are often scarier in my
+                head than reality, and it's okay to ask for help. I have lost myself 
+                countless of times, but I have found two things: one, I enjoy problem solving, and two, I laugh
+                really easily. </h2>
+                </h2>
               </div>
             :
             <div>
@@ -202,7 +218,15 @@ class App extends Component {
           <div className="about-body">
           {this.state.showPopup3 ?
               <div className="about-overlay" onClick={(e) => this.togglePopup3(e)} >
-                <h2 className="about-overlay-text">hi! nice to meet you</h2>
+                <h2 className="about-overlay-container">
+                  <h2 className="about-overlay-text">
+                  High school taught me the fruitfulness of commitment. Given enough sunlight, water, and care, a seed will sprout. 
+                  The flowers I have are thanks to the time and energy spent nourishing them in high school.
+                  Whether it be in leading long practices at badminton, 
+                  late night presentations and early meetings for FBLA, or hours in the basement tinkering with a robot,
+                  the seeds planted bloomed into recognition, shared smiles, and a unique story I wouldn't trade for anything.</h2>
+
+                </h2>
               </div>
             :
             <div>
@@ -232,11 +256,11 @@ class App extends Component {
           </div>
         </div>
         <div className="project-container">
-          <img className="image" src={popn} ref="popn"></img>
+        <img className="image" src={popn} ref="popn"></img>
           <div className="project-text-container" ref="popnText">
-            <h5 className="project-title">pop'n</h5>
+            <h5 className="project-title"><a className="link" href="http://pop-n.herokuapp.com" target="_blank">pop'n</a></h5>
             <h2 className="project-header">mit weblab semifinalist</h2>
-            pop'n is a cultural trivia game that promotes cultural enrichment 
+            pop'n is an interactive trivia game that promotes cultural enrichment 
             and curiosity. Players can learn about different regions
             by taking a poll with questions asked by other players.
           </div>
