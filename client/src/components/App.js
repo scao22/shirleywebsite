@@ -5,14 +5,11 @@ import NavBar from "./NavBar.js";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import sr from "./ScrollReveal.js";
 
-import popn from "../../../img/pop'n.png";
-import wisdomAI from "../../../img/wearable-wisdom.png";
-import icane from "../../../img/icane.png";
-import icaneCAD from "../../../img/icane-cad.png";
-import deicing from "../../../img/vibrational-deicing.png";
-import stevenson from "../../../img/stevenson.png";
-import mit from "../../../img/mit.png";
-import winnie from "../../../img/winnie.png";
+import popn from "../public/pop'n.png";
+import wisdomAI from "../public/wearable-wisdom.png";
+import stevenson from "../public/stevenson.png";
+import mit from "../public/mit.png";
+import winnie from "../public/winnie.png";
 
 class App extends Component {
   constructor(props) {
