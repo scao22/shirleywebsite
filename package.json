@@ -2,7 +2,7 @@
   "name": "shirleywebsite",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "client/index.js",
   "scripts": {
     "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5000",
     "start": "node index.js"
