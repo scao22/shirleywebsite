@@ -2,7 +2,7 @@
   "name": "shirleywebsite",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "client/src/index.js",
   "scripts": {
     "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5000",
     "start": "nodemon",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "nodemon": "^1.19.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scroll": "^1.7.16",
