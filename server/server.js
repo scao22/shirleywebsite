@@ -1,23 +1,62 @@
-var express = require('express');
-var app = express();
+// const validator = require("./validator");
+// validator.checkSetup();
 
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 3000;
+// require("dotenv").config();
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
+//import libraries needed for the webserver to work!
+const http = require("http");
+const express = require("express"); // backend framework for our node server.
+const path = require("path"); // provide utilities for working with file and directory paths
 
-// make express look in the public directory for assets (css/js/img)
-app.use(express.static(__dirname + '/public'));
 
-// set the home page route
-app.get('/', function(req, res) {
+// socket stuff
+// const socket = require("./server-socket");
 
-    // ejs render automatically looks in the views folder
-    res.render('index');
+
+
+// create a new express server
+const app = express();
+// app.use(validator.checkRoutes);
+
+// app.use(auth.populateCurrentUser);
+
+// allow us to process POST requests
+app.use(express.json());
+
+
+// connect user-defined routes
+// app.use("/api", api);
+
+// load the compiled react files, which will serve /index.html and /bundle.js
+const reactPath = path.resolve(__dirname, "..", "client", "dist");
+app.use(express.static(reactPath));
+
+// for all other routes, render index.html and let react router handle it
+app.get("*", (req, res) => {
+  res.sendFile(path.join(reactPath, "index.html"));
 });
 
-app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
+// any server errors cause this function to run
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  if (status === 500) {
+    // 500 means Internal Server Error
+    console.log("The server errored when processing a request!");
+    console.log(err);
+  }
+
+  res.status(status);
+  res.send({
+    status: status,
+    message: err.message
+  });
+});
+
+// hardcode port to 3000 for now
+const port = process.env.PORT || 3000;
+const server = http.Server(app);
+// socket.init(server);
+
+server.listen(port, () => {
+  console.log(`Server running on port: ${port}`);
 });

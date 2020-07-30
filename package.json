@@ -2,10 +2,10 @@
   "name": "shirleywebsite",
   "version": "1.0.0",
   "description": "",
-  "main": "client/index.js",
+  "main": "server/server.js",
   "scripts": {
     "hotloader": "webpack-dev-server --config ./webpack.config.js --mode development --port 5000",
-    "start": "node index.js"
+    "start": "node server/server.js"
   },
   "engines": {
     "node": "12.14.0",
